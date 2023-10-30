@@ -30,6 +30,7 @@ class OnbordingcontrollerImp extends Onbordingcontroller {
   @override
   onpagechenged(int index) {
     currentpage = index;
+
     update();
   }
 

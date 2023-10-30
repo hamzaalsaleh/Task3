@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "399161742620",
+    "project_id": "the-city-a72d7",
+    "storage_bucket": "the-city-a72d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399161742620:android:1daf9c590dab832d5b16d9",
+        "android_client_info": {
+          "package_name": "com.example.the_city"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2dtKg996sn3puUCI1vNWreUf5GhskbAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

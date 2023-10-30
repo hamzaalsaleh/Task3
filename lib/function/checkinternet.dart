@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:the_city/classes/statusrequest.dart';
 
 cheakInternet() async {
@@ -8,6 +9,7 @@ cheakInternet() async {
       return true;
     }
   } on SocketException catch (_) {
+    print("no0");
     return StatuseRequest.offline;
   }
 }

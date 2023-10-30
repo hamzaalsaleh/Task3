@@ -1,8 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:the_city/const/approute.dart';
 import 'package:the_city/const/theme.dart';
 import 'package:the_city/screen/fav.dart';
+import 'package:the_city/screen/favoritesing.dart';
 import 'package:the_city/screen/homepage.dart';
 import 'package:the_city/screen/mymap.dart';
 import 'package:the_city/screen/settings.dart';
@@ -24,20 +27,20 @@ class Theplacehome extends StatelessWidget {
         () => IndexedStack(
           index: Get.find<HomeController>().selectedIndex.value,
           children: [
-            const HomePage(),
-            const MapPage(),
-            FavoritesPage(),
+            HomePage(),
+            const MyMap(),
+            FirebaseAuth.instance.currentUser == null
+                ? FavoritesPage()
+                : FavoriteSign(),
             SettingsPage(),
           ],
         ),
       ),
       bottomNavigationBar: Obx(
         () => CurvedNavigationBar(
+          backgroundColor: Consts.indigoColor,
           height: 60,
-          backgroundColor: Colors.white,
-          color: settingsController.isDarkTheme.value
-              ? Colors.black
-              : Consts.indigoColor,
+          color: Consts.indigoColor,
           animationDuration: const Duration(milliseconds: 500),
           index: homeController.selectedIndex.value,
           items: [

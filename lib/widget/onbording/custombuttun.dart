@@ -16,12 +16,14 @@ class Custombuttononbording extends GetView<OnbordingcontrollerImp> {
           controller.next();
         },
         padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: const Text(
-          "continue",
-          style: TextStyle(
-              color: Consts.indigoColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 17),
+        child: GetBuilder<OnbordingcontrollerImp>(
+          builder: (controller) => Text(
+            controller.currentpage == 0 ? "next" : "continue",
+            style: const TextStyle(
+                color: Consts.indigoColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 17),
+          ),
         ),
       ),
     );

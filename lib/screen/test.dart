@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:the_city/widget/auth/customtextform.dart';
 
 class Test extends StatelessWidget {
-  const Test({super.key});
+  Test({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController controller = TextEditingController();
     return Scaffold(
         body: Scaffold(
       body: Center(
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: 4,
-          itemBuilder: (context, index) => Icon(
-            Icons.home,
-            size: 30,
-            color: Colors.black,
-          ),
+          child: CustomTextForm(
+        obscureText: false,
+        validator: (c) {
+          if (c == "") {
+            return "false";
+          }
+        },
+        sufIcon: Icon(
+          Icons.abc,
+          color: Colors.amber,
         ),
-      ),
+        hinttext: "test",
+        mycontroller: controller,
+      )),
     ));
   }
 }
-//  color: homeController.selectedIndex.value == 0
-//                     ? Colors.white
-//                     : Colors.grey.shade300
