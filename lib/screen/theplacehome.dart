@@ -29,9 +29,10 @@ class Theplacehome extends StatelessWidget {
           children: [
             HomePage(),
             const MyMap(),
-            FirebaseAuth.instance.currentUser == null
-                ? FavoritesPage()
-                : FavoriteSign(),
+            FirebaseAuth.instance.currentUser != null &&
+                    FirebaseAuth.instance.currentUser!.emailVerified
+                ? FavoriteSign()
+                : FavoritesPage(),
             SettingsPage(),
           ],
         ),

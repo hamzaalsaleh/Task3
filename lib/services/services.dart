@@ -8,12 +8,13 @@ class MyServices extends GetxService {
   Future<MyServices> init() async {
     await Firebase.initializeApp();
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        print('User is currently signed out!');
-      } else {
+      if (user != null && FirebaseAuth.instance.currentUser!.emailVerified) {
         print('User is signed in!');
+      } else {
+        print('User is currently signed out!');
       }
     });
+
     sharedPreferences = await SharedPreferences.getInstance();
     return this;
   }

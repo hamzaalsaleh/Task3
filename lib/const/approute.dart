@@ -5,4 +5,5 @@ class Approute {
   static const String signup = "/signup";
   static const String alldetails = "/alldetails";
   static const String favoritesign = "/favoritesign";
+  static const String successsignup = "/successsignup";
 }

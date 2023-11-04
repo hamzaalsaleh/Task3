@@ -6,6 +6,7 @@ import 'package:the_city/screen/auth/login.dart';
 import 'package:the_city/screen/auth/signup.dart';
 import 'package:the_city/screen/favoritesing.dart';
 import 'package:the_city/screen/onbording.dart';
+import 'package:the_city/screen/successsignup.dart';
 import 'package:the_city/screen/test.dart';
 import 'package:the_city/screen/theplacehome.dart';
 
@@ -17,6 +18,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/signup", page: () => const Signup()),
   GetPage(name: "/alldetails", page: () => Alldetails()),
   GetPage(name: "/favoritesign", page: () => FavoriteSign()),
+  GetPage(name: "/successsignup", page: () => SuccessSignup()),
   // GetPage(name: "/", page: () => Theplacehome()),
   // GetPage(name: "/", page: () => Test()),
 ];
